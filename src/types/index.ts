@@ -37,3 +37,12 @@ export type Order = {
     comment?: string
   }
 }
+
+export type Review = {
+  id: string
+  author: string
+  game: string
+  rating: number // 1..5
+  text: string
+  date: string // ISO date
+}

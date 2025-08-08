@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
 import ServiceCard from '@/components/ServiceCard'
 import { services } from '@/data/services'
+import ReviewCard from '@/components/ReviewCard'
+import { reviews } from '@/data/reviews'
 
 export default function Home() {
   const featured = services.slice(0, 8)
+  const topReviews = reviews.slice(0, 6)
   return (
     <div>
       <section className="card" style={{padding:24, marginBottom:16}}>
@@ -20,6 +23,11 @@ export default function Home() {
       <h2 style={{margin:'12px 0'}}>Популярное</h2>
       <div className="grid cols-4">
         {featured.map(s => <ServiceCard key={s.id} s={s} />)}
+      </div>
+
+      <h2 style={{margin:'20px 0 12px'}}>Отзывы</h2>
+      <div className="grid cols-3">
+        {topReviews.map(r => <ReviewCard key={r.id} r={r} />)}
       </div>
     </div>
   )

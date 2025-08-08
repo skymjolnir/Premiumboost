@@ -28,11 +28,13 @@ export default function ServiceDetail() {
 
   if (!service) return <div className="center"><div className="card">Услуга не найдена</div></div>
 
+  const svc = service
+
   function handleAdd() {
     add({
-      id: service.id,
-      title: service.title,
-      basePrice: service.basePrice,
+      id: svc.id,
+      title: svc.title,
+      basePrice: svc.basePrice,
       finalPrice: price,
       qty,
       options: { platform, region }
